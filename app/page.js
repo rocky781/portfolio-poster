@@ -21,18 +21,24 @@ export default function Home() {
   };
 
   const domains = [
-    { name: "Frontend", icon: "🎨", count: 5, color: "#6366f1" },
-    { name: "Backend", icon: "⚙️", count: 5, color: "#22c55e" },
-    { name: "DevOps", icon: "☁️", count: 5, color: "#f59e0b" },
-    { name: "AI/ML", icon: "🤖", count: 5, color: "#ef4444" },
-    { name: "Database", icon: "🗄️", count: 5, color: "#8b5cf6" },
-    { name: "Data Analysis", icon: "📊", count: 5, color: "#06b6d4" },
+    { name: "Full Stack", icon: "💻", color: "#6366f1" },
+    { name: "Frontend", icon: "🎨", color: "#ec4899" },
+    { name: "Backend", icon: "⚙️", color: "#22c55e" },
+    { name: "DevOps", icon: "☁️", color: "#f59e0b" },
+    { name: "AI/ML", icon: "🤖", color: "#ef4444" },
+    { name: "Data Science", icon: "🔬", color: "#8b5cf6" },
+    { name: "Mobile App", icon: "📱", color: "#06b6d4" },
+    { name: "Cybersecurity", icon: "🔒", color: "#14b8a6" },
+  ];
+
+  const languages = [
+    "JavaScript", "TypeScript", "Python", "Java", "Go", "Rust", "C++", "Ruby"
   ];
 
   const features = [
     "30 Real-World Projects",
+    "Your Chosen Domain(s)",
     "Beginner to Advanced",
-    "Domain Specialization",
     "Interview Ready",
     "GitHub Portfolio",
     "Unique for Each Student",
@@ -63,7 +69,7 @@ export default function Home() {
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#8b5cf6]/5 rounded-full blur-3xl"></div>
             
             <div className="relative p-12">
-              <div className="text-center mb-10">
+              <div className="text-center mb-8">
                 <div className="inline-block px-4 py-1.5 bg-[#6366f1]/10 rounded-full text-[#6366f1] font-semibold text-sm mb-4">
                   🎓 For College Students
                 </div>
@@ -74,30 +80,76 @@ export default function Home() {
                 </h1>
                 
                 <p className="text-lg text-[#64748b] max-w-2xl mx-auto">
-                  Transform yourself into an industry-ready software professional with 
-                  30 real-world projects across 7 major domains
+                  Choose YOUR domain, YOUR language, YOUR project mix. 
+                  30 personalized projects built your way
                 </p>
               </div>
 
-              <div className="bg-gradient-to-r from-[#6366f1] to-[#8b5cf6] rounded-2xl p-8 mb-10 text-white text-center">
+              <div className="bg-gradient-to-r from-[#6366f1] to-[#8b5cf6] rounded-2xl p-8 mb-8 text-white text-center">
                 <div className="text-5xl font-bold mb-2">₹10,000</div>
-                <div className="text-white/80">Complete 30-Project Portfolio with GitHub Setup</div>
+                <div className="text-white/80">Complete 30-Project Custom Portfolio</div>
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
+              <div className="grid grid-cols-4 md:grid-cols-4 gap-3 mb-8">
                 {domains.map((domain) => (
                   <div
                     key={domain.name}
-                    className="bg-white rounded-xl p-4 text-center border border-[#e2e8f0] shadow-sm hover:shadow-md transition-shadow"
+                    className="bg-white rounded-xl p-3 text-center border-2 border-[#e2e8f0] hover:border-[#6366f1] transition-all"
                   >
-                    <div className="text-3xl mb-2">{domain.icon}</div>
-                    <div className="font-semibold text-[#0f172a]">{domain.name}</div>
-                    <div className="text-sm text-[#64748b]">{domain.count} Projects</div>
+                    <div className="text-2xl mb-1">{domain.icon}</div>
+                    <div className="font-semibold text-[#0f172a] text-sm">{domain.name}</div>
                   </div>
                 ))}
               </div>
 
-              <div className="grid grid-cols-3 gap-4 mb-10">
+              <div className="bg-[#f8fafc] rounded-2xl p-6 mb-8 border border-[#e2e8f0]">
+                <div className="text-center mb-4">
+                  <h3 className="font-bold text-[#0f172a] text-lg">Choose Your Technology Stack</h3>
+                  <p className="text-sm text-[#64748b]">Select any language or framework</p>
+                </div>
+                <div className="flex flex-wrap justify-center gap-2">
+                  {languages.map((lang) => (
+                    <span
+                      key={lang}
+                      className="px-4 py-2 bg-white rounded-full text-sm font-medium text-[#64748b] border border-[#e2e8f0] hover:border-[#6366f1] hover:text-[#6366f1] transition-colors cursor-pointer"
+                    >
+                      {lang}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-6 mb-8 border border-[#e2e8f0]">
+                <div className="text-center mb-4">
+                  <h3 className="font-bold text-[#0f172a] text-lg">Customize Your Project Mix</h3>
+                  <p className="text-sm text-[#64748b]">Decide percentage allocation for each domain</p>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <span className="w-24 text-sm font-medium text-[#64748b]">Full Stack</span>
+                    <div className="flex-1 h-3 bg-[#e2e8f0] rounded-full overflow-hidden">
+                      <div className="h-full bg-[#6366f1] rounded-full" style={{ width: "40%" }}></div>
+                    </div>
+                    <span className="w-12 text-sm font-bold text-[#6366f1]">40%</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="w-24 text-sm font-medium text-[#64748b]">DevOps</span>
+                    <div className="flex-1 h-3 bg-[#e2e8f0] rounded-full overflow-hidden">
+                      <div className="h-full bg-[#f59e0b] rounded-full" style={{ width: "30%" }}></div>
+                    </div>
+                    <span className="w-12 text-sm font-bold text-[#f59e0b]">30%</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="w-24 text-sm font-medium text-[#64748b]">AI/ML</span>
+                    <div className="flex-1 h-3 bg-[#e2e8f0] rounded-full overflow-hidden">
+                      <div className="h-full bg-[#ef4444] rounded-full" style={{ width: "30%" }}></div>
+                    </div>
+                    <span className="w-12 text-sm font-bold text-[#ef4444]">30%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-3 gap-4 mb-8">
                 {features.map((feature, index) => (
                   <div
                     key={index}
@@ -109,20 +161,7 @@ export default function Home() {
                 ))}
               </div>
 
-              <div className="bg-[#f8fafc] rounded-2xl p-6 border border-[#e2e8f0]">
-                <div className="flex flex-wrap justify-center gap-3">
-                  {["Frontend", "Backend", "DevOps", "AI/ML", "Database", "Data Analysis", "Data Science"].map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-4 py-2 bg-white rounded-full text-sm font-medium text-[#64748b] border border-[#e2e8f0]"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mt-10 pt-6 border-t border-[#e2e8f0] flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="mt-6 pt-6 border-t border-[#e2e8f0] flex flex-col md:flex-row items-center justify-between gap-4">
                 <div className="flex items-center gap-2 text-[#64748b]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
@@ -130,7 +169,7 @@ export default function Home() {
                     <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
                     <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                   </svg>
-                  <span className="font-medium">Unique for Each Student</span>
+                  <span className="font-medium">100% Customizable</span>
                 </div>
                 <div className="flex items-center gap-2 text-[#64748b]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -139,7 +178,7 @@ export default function Home() {
                     <line x1="16" y1="13" x2="8" y2="13"/>
                     <line x1="16" y1="17" x2="8" y2="17"/>
                   </svg>
-                  <span className="font-medium">Interview Preparation Included</span>
+                  <span className="font-medium">Interview Prep Included</span>
                 </div>
                 <div className="flex items-center gap-2 text-[#64748b]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
