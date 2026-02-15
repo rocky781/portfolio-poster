@@ -1,6 +1,14 @@
 const config = {
   plugins: {
-    "@tailwindcss/postcss": {},
+    "@tailwindcss/postcss": {
+      taiwindCss: {
+        theme: {
+          colors: {
+            // Override with traditional rgb colors
+          }
+        }
+      },
+    },
   },
 };
 

@@ -8,15 +8,22 @@ export default function Home() {
 
   const downloadPoster = async () => {
     if (posterRef.current) {
-      const canvas = await html2canvas(posterRef.current, {
-        scale: 2,
-        backgroundColor: "#f8fafc",
-        useCORS: true,
-      });
-      const link = document.createElement("a");
-      link.download = "30-Projects-Program-Poster.png";
-      link.href = canvas.toDataURL("image/png");
-      link.click();
+      try {
+        const canvas = await html2canvas(posterRef.current, {
+          scale: 2,
+          backgroundColor: "#ffffff",
+          useCORS: true,
+          logging: false,
+          fonts: { family: "Arial, sans-serif" },
+        });
+        const link = document.createElement("a");
+        link.download = "30-Projects-Program-Poster.png";
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+      } catch (err) {
+        console.error("Download error:", err);
+        alert("Error downloading poster. Please try again.");
+      }
     }
   };
 
